@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Past Perfect</title>
+    <link rel="stylesheet" href="./form.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="page-wrapper" id="page-wrapper">
+      <header class="container">
+        <div class="logo-wrapper">
+          <div class="logo">Past Perfect</div>
+          <h3>Second-hand items for your home</h3>
+        </div>
+        <nav class="desktop-nav">
+          <ul>
+              <li><a class="return-home-btn header-btn" href="../index.html">All Items</a></li>
+          </ul>
+        </nav>
+        <img
+          class="burger-menu"
+          id="burger-menu"
+          src="../assets/burger-menu.svg"
+          alt="Menu"
+        />
+      </header>
+      <nav class="mobile-nav" id="mobile-nav">
+        <ul>
+          <li><a class="return-home-btn header-btn" href="../index.html">All Items</a></li>
+        </ul>
+      </nav>
+
+      <main class="container">
+        <div class="form">
+          <h3 class="form-title">Add New Item</h3>
+          <div class="input-wrapper">
+            <label>Title</label>
+            <input id="item-title" placeholder="Title (e.g., Lamp)" />
+          </div>
+          <div class="input-wrapper">
+            <label>Price</label>
+            <input id="price" placeholder="Price in EUR"></input>
+          </div>
+          <div class="input-wrapper">
+            <label>Description</label>
+            <textarea id="description" placeholder="Enter a detailed description (at least 50 characters)..."></textarea>
+          </div>
+          <div class="input-wrapper">
+            <label>Material</label>
+            <input id="material" placeholder="Material (e.g., Glass)"></input>
+          </div>
+          <div class="input-wrapper">
+            <label>Image URL</label>
+            <input id="item-image" placeholder="e.g., https://example.com/image.jpg" />
+          </div>
+          <div class="input-wrapper">
+            <label>Pick up Location</label>
+            <input id="location" placeholder="Enter City"></input>
+          </div>
+          <select id="category">
+            <optgroup label="-Choose category-" disabled>
+              <option value="category"  disabled selected hidden>-Choose category-</option>
+            </optgroup>
+            <option value="Furniture">Furniture</option>
+            <option value="Home Décor">Home Décor</option>
+            <option value="Lighting">Lighting</option>
+          </select>
+          <select id="condition">
+            <optgroup label="-Choose condition-" disabled>
+              <option value="condition" disabled selected hidden>-Choose condition-</option>
+            </optgroup>
+            <option value="good">Good</option>
+            <option value="medium">Medium</option>
+            <option value="bad">Bad</option>
+          </select>
+          <button class="submit-btn" id="submit-btn">Submit</button>
+          <div class="error-message" id="error-message"></div>
+        </div>
+      </main>
+      
+      <footer class="container">
+        <div class="inner-links">
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+  
+        <div class="copyright-social-links">
+          <h4>&copy; 2024 Past Perfect</h4>
+          <div class="social-links">
+            <ul>
+              <li>
+                <a href="#"
+                  ><img src="../assets/instagram-icon.svg" alt="Instagram"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="../assets/facebook-icon.svg" alt="Facebook"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      </div>
+  <div class="success-message" id="success-message"></div>
+    <script defer type="module" src="./form.js"></script>
+  </body>
+</html>

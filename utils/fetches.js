@@ -22,12 +22,12 @@ export const fetchItemById = async (id) => {
   }
 };
 
-export const deleteItem = async (itemId) => {
+export const deleteItem = async (id) => {
   const pageWrapper = document.getElementById("page-wrapper");
   const deleteMessage = document.getElementById("delete-message");
   try {
     const response = await fetch(
-      `https://665f37b01e9017dc16f35a56.mockapi.io/interior-items/${itemId}`,
+      `https://665f37b01e9017dc16f35a56.mockapi.io/interior-items/${id}`,
       {
         method: "DELETE",
       }

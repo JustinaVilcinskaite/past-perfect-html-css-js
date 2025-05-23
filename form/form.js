@@ -1,4 +1,5 @@
 import { postNewItem } from "../utils/fetches.js";
+import { validateForm } from "../utils/form-validation.js";
 
 const submitBtn = document.getElementById("submit-btn");
 const title = document.getElementById("item-title");
@@ -6,67 +7,72 @@ const price = document.getElementById("price");
 const description = document.getElementById("description");
 const material = document.getElementById("material");
 const imageUrl = document.getElementById("item-image");
-const pickUpLocation = document.getElementById("location");
+const pickupLocation = document.getElementById("location");
 const category = document.getElementById("category");
 const condition = document.getElementById("condition");
 const errorMessage = document.getElementById("error-message");
+const pageWrapper = document.getElementById("page-wrapper");
+const successMessage = document.getElementById("success-message");
 
 submitBtn.addEventListener("click", () => {
-  errorMessage.textContent = "";
-  errorMessage.classList.remove("visible");
-
   if (
-    !title.value ||
-    !price.value ||
-    !description.value ||
-    !material.value ||
-    !imageUrl.value ||
-    !pickUpLocation.value ||
-    category.value === "category" ||
-    condition.value === "condition"
+    validateForm(
+      title,
+      price,
+      description,
+      material,
+      imageUrl,
+      pickupLocation,
+      category,
+      condition,
+      errorMessage
+    )
   ) {
-    errorMessage.textContent =
-      "All fields are required. Please fill out the form.";
-    errorMessage.classList.add("visible");
-    return;
+    const newItem = {
+      title: title.value,
+      category: category.value,
+      price: price.value,
+      description: description.value,
+      material: material.value,
+      condition: condition.value,
+      imageUrl: imageUrl.value,
+      pickupLocation: pickupLocation.value,
+    };
+
+    postNewItem(newItem, pageWrapper, successMessage);
   }
-
-  const priceValue = Number(price.value);
-  if (!priceValue) {
-    errorMessage.textContent = "Please enter a valid price.";
-    errorMessage.classList.add("visible");
-    return;
-  }
-
-  const lengthRegex = /^.{50,}$/;
-  const trimmedDescription = description.value.trim();
-  if (!lengthRegex.test(trimmedDescription)) {
-    errorMessage.textContent =
-      "The description must be at least 50 characters long.";
-    errorMessage.classList.add("visible");
-    return;
-  }
-
-  const imageUrlRegex = /\.(jpeg|jpg|png|gif)$/i;
-  if (!imageUrlRegex.test(imageUrl.value)) {
-    errorMessage.textContent = "Please enter a valid image URL.";
-    errorMessage.classList.add("visible");
-    return;
-  }
-
-  const newItem = {
-    title: title.value,
-    category: category.value,
-    price: priceValue,
-    description: description.value,
-    material: material.value,
-    condition: condition.value,
-    imageUrl: imageUrl.value,
-    pickUpLocation: pickUpLocation.value,
-  };
-
-  postNewItem(newItem);
 });
+
+// const collectFormData = () => ({
+//   title: title.value,
+//   category: category.value,
+//   price: price.value,
+//   description: description.value,
+//   material: material.value,
+//   condition: condition.value,
+//   imageUrl: imageUrl.value,
+//   pickUpLocation: pickUpLocation.value,
+// });
+
+// const handleSubmit = async () => {
+//   const formData = [
+//     title,
+//     price,
+//     description,
+//     material,
+//     imageUrl,
+//     pickUpLocation,
+//     category,
+//     condition,
+//     errorMessage,
+//   ];
+
+//   if (validateForm(...formData)) {
+//     const newItem = collectFormData();
+//     await postNewItem(newItem, pageWrapper, successMessage);
+//   }
+// };
+// submitBtn.addEventListener("click", handleSubmit);
 
 // Menu Toggle
 

@@ -4,14 +4,15 @@
   font-weight: 400;
 }
 
+html,
 body {
+  height: 100%;
   margin: 0;
-  min-width: 380px;
-  font-family: "Open Sans", sans-serif;
 }
 
-main {
-  min-height: 55vh;
+body {
+  min-width: 380px;
+  font-family: "Open Sans", sans-serif;
 }
 
 a {
@@ -20,11 +21,18 @@ a {
 }
 
 .page-wrapper {
-  max-width: 1400px;
-  margin: 0 auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 .container {
+  max-width: 1400px;
+  margin: 0 auto;
   padding: 0 2rem;
 }
 
@@ -33,13 +41,18 @@ a {
 header {
   background-color: #fff;
   height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 2rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   position: sticky;
   top: 0;
+  z-index: 10;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
 .logo-wrapper {
@@ -153,7 +166,7 @@ header {
   background-color: #e9f2fb;
   width: 220px;
   height: 280px;
-  padding: 2rem;
+  padding: 2.5rem;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -169,22 +182,23 @@ header {
 }
 
 .card h3 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   letter-spacing: 0.4px;
+  text-transform: uppercase;
 }
 
 .card h2 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 /* FOOTER */
 
-footer {
+footer .container {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  margin-top: 4rem;
   height: 100px;
+  margin-top: 4rem;
 }
 
 footer ul {
@@ -201,7 +215,6 @@ footer ul {
   border-bottom: 1px solid black;
   font-size: 0.9rem;
   letter-spacing: 0.5px;
-  font-size: 0.9rem;
   cursor: pointer;
 }
 

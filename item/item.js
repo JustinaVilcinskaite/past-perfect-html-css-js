@@ -8,8 +8,10 @@ const description = document.getElementById("description");
 const material = document.getElementById("material");
 const condition = document.getElementById("condition");
 const indicator = document.getElementById("indicator");
-const pickUpLocation = document.getElementById("pick-up-location");
+const pickupLocation = document.getElementById("pick-up-location");
 const deleteButton = document.getElementById("delete-btn");
+const pageWrapper = document.getElementById("page-wrapper");
+const deleteMessage = document.getElementById("delete-message");
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
@@ -24,9 +26,11 @@ description.textContent = item.description;
 material.textContent = item.material;
 condition.textContent = item.condition;
 indicator.classList.add(item.condition);
-pickUpLocation.textContent = item.pickUpLocation;
+pickupLocation.textContent = item.pickupLocation;
 
-deleteButton.addEventListener("click", () => deleteItem(id));
+deleteButton.addEventListener("click", () =>
+  deleteItem(id, pageWrapper, deleteMessage)
+);
 
 // Menu Toggle
 

@@ -22,9 +22,7 @@ export const fetchItemById = async (id) => {
   }
 };
 
-export const deleteItem = async (id) => {
-  const pageWrapper = document.getElementById("page-wrapper");
-  const deleteMessage = document.getElementById("delete-message");
+export const deleteItem = async (id, pageWrapper, deleteMessage) => {
   try {
     const response = await fetch(
       `https://665f37b01e9017dc16f35a56.mockapi.io/interior-items/${id}`,
@@ -45,10 +43,7 @@ export const deleteItem = async (id) => {
   }
 };
 
-export const postNewItem = async (newItem) => {
-  const pageWrapper = document.getElementById("page-wrapper");
-  const successMessage = document.getElementById("success-message");
-
+export const postNewItem = async (newItem, pageWrapper, successMessage) => {
   try {
     const response = await fetch(
       "https://665f37b01e9017dc16f35a56.mockapi.io/interior-items",
@@ -69,6 +64,6 @@ export const postNewItem = async (newItem) => {
       window.location.replace("../index.html");
     }, 2000);
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 };

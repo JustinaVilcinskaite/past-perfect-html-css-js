@@ -4,22 +4,20 @@ const cardsWrapper = document.getElementById("cards-wrapper");
 
 const buildCards = (data) => {
   cardsWrapper.innerHTML = "";
-  const sortedItems = [...data].sort((a, b) => {
-    return Number(a.price) - Number(b.price);
-  });
-  sortedItems.forEach((i) => {
+
+  data.forEach((d) => {
     const card = document.createElement("a");
-    card.href = `../item/item.html?id=${i.id}`;
+    card.href = `../item/item.html?id=${d.id}`;
     card.setAttribute("class", "card");
 
     const title = document.createElement("h3");
-    title.textContent = i.title;
+    title.textContent = d.title;
 
     const price = document.createElement("h2");
-    price.textContent = `€ ${i.price}`;
+    price.textContent = `€ ${d.price}`;
 
     const image = document.createElement("img");
-    image.src = i.imageUrl;
+    image.src = d.imageUrl;
 
     card.append(image, title, price);
     cardsWrapper.append(card);
@@ -27,7 +25,10 @@ const buildCards = (data) => {
 };
 
 const items = await fetchAllItems();
-buildCards(items);
+const sortedItems = [...items].sort(
+  (a, b) => Number(a.price) - Number(b.price)
+);
+buildCards(sortedItems);
 
 // Filter buttons
 
@@ -46,28 +47,30 @@ const removeSelectedClassFromAll = () => {
 furnitureFilterBtn.addEventListener("click", () => {
   removeSelectedClassFromAll();
   furnitureFilterBtn.classList.add("selected-btn");
-  const filteredFurniture = items.filter((i) => i.category === "Furniture");
+  const filteredFurniture = sortedItems.filter(
+    (i) => i.category === "Furniture"
+  );
   buildCards(filteredFurniture);
 });
 
 decorFilterBtn.addEventListener("click", () => {
   removeSelectedClassFromAll();
   decorFilterBtn.classList.add("selected-btn");
-  const filteredDecor = items.filter((i) => i.category === "Home Décor");
+  const filteredDecor = sortedItems.filter((i) => i.category === "Home Décor");
   buildCards(filteredDecor);
 });
 
 lightingFilterBtn.addEventListener("click", () => {
   removeSelectedClassFromAll();
   lightingFilterBtn.classList.add("selected-btn");
-  const filteredLighting = items.filter((i) => i.category === "Lighting");
+  const filteredLighting = sortedItems.filter((i) => i.category === "Lighting");
   buildCards(filteredLighting);
 });
 
 allFilterBtn.addEventListener("click", () => {
   removeSelectedClassFromAll();
   allFilterBtn.classList.add("selected-btn");
-  buildCards(items);
+  buildCards(sortedItems);
 });
 
 // Menu Toggle

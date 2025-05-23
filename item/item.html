@@ -14,32 +14,35 @@
   </head>
   <body>
     <div class="page-wrapper" id="page-wrapper">
-      <header class="container">
-        <div class="logo-wrapper">
-          <div class="logo">Past Perfect</div>
-          <h3>Second-hand items for your home</h3>
+      <header>
+        <div class="container">
+          <div class="logo-wrapper">
+            <div class="logo">Past Perfect</div>
+            <h3>Second-hand items for your home</h3>
+          </div>
+          <nav class="desktop-nav">
+            <ul>
+              <li>
+                <a class="return-home-btn header-btn" href="../index.html"
+                  >All Items</a
+                >
+              </li>
+              <li>
+                <a class="add-btn header-btn" href="../form/form.html"
+                  >Add Item +</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <img
+            class="burger-menu"
+            id="burger-menu"
+            src="../assets/burger-menu.svg"
+            alt="Menu"
+          />
         </div>
-        <nav class="desktop-nav">
-          <ul>
-            <li>
-              <a class="return-home-btn header-btn" href="../index.html"
-                >All Items</a
-              >
-            </li>
-            <li>
-              <a class="add-btn header-btn" href="../form/form.html"
-                >Add Item +</a
-              >
-            </li>
-          </ul>
-        </nav>
-        <img
-          class="burger-menu"
-          id="burger-menu"
-          src="../assets/burger-menu.svg"
-          alt="Menu"
-        />
       </header>
+
       <nav class="mobile-nav" id="mobile-nav">
         <ul>
           <li>
@@ -55,62 +58,66 @@
         </ul>
       </nav>
 
-      <main class="container">
-        <section class="item-wrapper">
-          <img id="item-img" src="" />
-          <div class="item-description-wrapper">
-            <div class="main-info">
-              <h4 id="category"></h4>
-              <h2 id="title"></h2>
-              <h3 id="price"></h3>
-              <p id="description"></p>
-            </div>
+      <main>
+        <div class="container">
+          <section class="item-wrapper">
+            <img id="item-img" src="" />
+            <div class="item-description-wrapper">
+              <div class="main-info">
+                <h4 id="category"></h4>
+                <h2 id="title"></h2>
+                <h3 id="price"></h3>
+                <p id="description"></p>
+              </div>
 
-            <div class="additional-info">
-              <span>Material</span>
-              <h5 id="material"></h5>
-            </div>
+              <div class="additional-info">
+                <span>Material</span>
+                <h5 id="material"></h5>
+              </div>
 
-            <div class="additional-info">
-              <span>Condition</span>
-              <div class="con-ind-wrapper">
-                <h5 id="condition"></h5>
-                <div class="indicator" id="indicator"></div>
+              <div class="additional-info">
+                <span>Condition</span>
+                <div class="con-ind-wrapper">
+                  <h5 id="condition"></h5>
+                  <div class="indicator" id="indicator"></div>
+                </div>
+              </div>
+
+              <div class="additional-info">
+                <span>Pick up Location</span>
+                <h5 id="pick-up-location"></h5>
               </div>
             </div>
-
-            <div class="additional-info">
-              <span>Pick up Location</span>
-              <h5 id="pick-up-location"></h5>
-            </div>
-          </div>
-        </section>
-        <button class="delete-btn" id="delete-btn">Delete Item</button>
-      </main>
-      <footer class="container">
-        <div class="inner-links">
-          <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
+          </section>
+          <button class="delete-btn" id="delete-btn">Delete Item</button>
         </div>
+      </main>
 
-        <div class="copyright-social-links">
-          <h4>&copy; 2024 Past Perfect</h4>
-          <div class="social-links">
+      <footer>
+        <div class="container">
+          <div class="inner-links">
             <ul>
-              <li>
-                <a href="#"
-                  ><img src="../assets/instagram-icon.svg" alt="Instagram"
-                /></a>
-              </li>
-              <li>
-                <a href="#"
-                  ><img src="../assets/facebook-icon.svg" alt="Facebook"
-                /></a>
-              </li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">FAQ</a></li>
             </ul>
+          </div>
+          <div class="copyright-social-links">
+            <h4>&copy; 2024 Past Perfect</h4>
+            <div class="social-links">
+              <ul>
+                <li>
+                  <a href="#"
+                    ><img src="../assets/instagram-icon.svg" alt="Instagram"
+                  /></a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><img src="../assets/facebook-icon.svg" alt="Facebook"
+                  /></a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </footer>

@@ -46,6 +46,8 @@ It interacts with [MockAPI](https://mockapi.io/) to simulate CRUD operations.
 
 ## Screenshots
 
+## Screenshots
+
 ### Homepage (Desktop View)
 
 ![Homepage Desktop](assets/screenshots/homepage-desktop.png)

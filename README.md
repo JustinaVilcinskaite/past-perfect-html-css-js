@@ -52,7 +52,7 @@ It interacts with [MockAPI](https://mockapi.io/) to simulate CRUD operations.
 
 ### Homepage (Mobile View)
 
-![Homepage Mobile](assets/screenshots/homepage-mobile.png)
+<img src="assets/screenshots/homepage-mobile.png" alt="Homepage Mobile" width="250">
 
 ### Category Filtering
 
